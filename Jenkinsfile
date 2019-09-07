@@ -13,7 +13,7 @@ stage('Test') {
 steps {
 #sh 'docker container rm -f node'
 sh 'docker container run -p 9003:8080 --name node -d kamranyaqub1/finalprojbackend'
-sh 'curl -I http://localhost:8001'
+sh 'curl -I http://localhost:9003'
 }
 }
 stage('Publish') {
