@@ -12,7 +12,7 @@ sh 'docker build -t kamranyaqub1/prj1/finalprojbackend .'
 stage('Test') {
 steps {
 //sh 'docker container rm -f node'
-sh 'docker container run -p 9005:8080 --name containerbackend -d kamranyaqub1/prj1/finalprojbackend'
+sh 'docker container run -p 9005:8080 --name containerbackend1 -d kamranyaqub1/prj1/finalprojbackend'
 sh 'curl -I http://localhost:9005'
 }
 }
