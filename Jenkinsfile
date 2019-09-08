@@ -22,7 +22,7 @@ steps{
 script {
 docker.withRegistry( '', registryCredential ) {
 sh 'docker login'
-sh 'docker tag finalprojbackend kamranyaqub1/prj1/finalprojbackend'
+//sh 'docker tag finalprojbackend kamranyaqub1/prj1/finalprojbackend'
 sh 'docker push kamranyaqub1/prj1/finalprojbackend'
 }
 }  
