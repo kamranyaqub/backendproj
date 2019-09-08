@@ -18,7 +18,12 @@ sh 'docker container run -p 9005:8080 --name containerbackend1 -d kamranyaqub1/p
 }
 stage('Publish') {
 steps{
-sh 'curl -I http://localhost:9005/hello'
+//sh 'curl -I http://localhost:9005/hello'
+script {
+docker.withRegistry( '', registryCredential ) {
+sh 'docker push kamranyaqub1/prj1/finalprojbackend'
+}
+}
 }
 }
 }
