@@ -11,9 +11,10 @@ sh 'docker build -t finalprojbackend1 .'
 }
 stage('Test') {
 steps {
-////sh 'docker container rm -f node'
+sh 'docker container rm -f containerbackend1 || true'
 sh 'docker container run -p 9005:8080 --name containerbackend1 -d finalprojbackend1'
-//sh 'curl -I http://localhost:9005/hello'
+sh 'sleep 10'
+sh 'curl -I http://localhost:9005/hello'
 }
 }
 stage('Publish') {
